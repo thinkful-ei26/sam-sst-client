@@ -5,12 +5,18 @@ import {required, nonEmpty } from '../validators';
 import { API_BASE_URL } from '../config'
 import { connect } from 'react-redux';
 import {postStudent, fetchStudents} from '../actions'
+import './studentForm.css'
 
 
 export class StudnetForm extends React.Component {
     onSubmit(values) {
-        console.log(values);
-        this.props.dispatch(postStudent(values))
+        // console.log(this.props.userId);
+        // const newValues = {...values, }
+        const newValues = {...values, userId:this.props.userId }
+        console.log('>>>>>>>>>>',newValues);
+
+
+        this.props.dispatch(postStudent(newValues, this.props.userId))
 
             .then(res => {
                 if (!res.ok) {
@@ -31,7 +37,7 @@ export class StudnetForm extends React.Component {
                 }
                 return;
             })
-            .then(() => this.props.dispatch(fetchStudents()))
+            .then(() => this.props.dispatch(fetchStudents(this.props.userId)))
             .catch(err => {
                 const {reason, message, location} = err;
                 if (reason === 'ValidationError') {
@@ -55,7 +61,7 @@ export class StudnetForm extends React.Component {
         if (this.props.submitSucceeded) {
             successMessage = (
                 <div className="message message-success">
-                    Studnet submitted successfully
+                    Student submitted successfully
                 </div>
             );
         }
@@ -68,24 +74,26 @@ export class StudnetForm extends React.Component {
         }
 
         return (
-            <form
+            <form className='studentForm'
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
                 {successMessage}
                 {errorMessage}
+                <label htmlFor="studentName">Student Name</label>
                 <Field
-                    name="name"
+                    name="studentName"
                     type="text"
                     component={Input}
-                    label="Student Name"
+                    // label="Student Name"
                     validate={[required, nonEmpty]}
                 />
+                 <label htmlFor="goals">Goal</label>
                 <Field
                     name="goals"
                     type="text"
                     component={Input}
-                    label="Goals"
+                    // label="Goal"
                     validate={[required, nonEmpty]}
                 />
                 
@@ -98,8 +106,18 @@ export class StudnetForm extends React.Component {
         );
     }
 }
-StudnetForm = connect()(StudnetForm);
 
+
+const mapStateToProps = state => {
+    console.log('>>qwerty>>>', state)
+    
+    return {
+        userId: state.auth.currentUser.id,
+        
+    };
+};
+
+StudnetForm = connect(mapStateToProps)(StudnetForm);
 
 export default reduxForm({
     form: 'student',

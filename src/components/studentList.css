@@ -1,0 +1,85 @@
+/* .cool {
+    width: 40px;
+} */
+
+ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.studentsListt {
+    overflow:  auto;
+    height: 380px;
+    padding: 0px;
+    
+}
+
+.studentButton {
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+}
+
+.studentButton:hover,
+.studentButton:focus {
+    background: #0053ba;
+}
+
+.studentButton:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.studentButton:active {
+    transform: scale(0.99);
+}
+.cool {
+    display: inline;
+    /* border: 4px #61dafb solid; */
+    /* border: 4px black solid; */
+    border: none;
+
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+    text-decoration: none;
+    background: #282c34;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+}
+
+.cool:hover,
+.cool:focus {
+    background: #0053ba;
+}
+
+.cool:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.cool:active {
+    transform: scale(0.99);
+}

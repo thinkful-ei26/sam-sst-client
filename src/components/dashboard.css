@@ -1,0 +1,63 @@
+.dash {
+    /* display: inline; */
+    /* display:flex;  */
+    /* flex-direction:row; */
+    /* width: 100%; */
+    box-sizing: border-box;
+}
+
+
+.students {
+  background: lightblue;
+  border: solid blue 1px;
+  height: 600px;
+  display: inline-block;
+  padding: 0px;
+  width:20%;
+  margin: auto;
+  box-sizing: border-box;
+  vertical-align: top;
+
+}
+.notes {
+  background: lightblue;
+  border: solid blue 1px;
+  height: 600px;
+  display: inline-block;
+  padding: 0px;
+  width:80%;
+  margin: auto;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.chart {
+    /* display:flex;  */
+    /* display: inline-block; */
+    /* display: inline; */
+}
+
+.dash {
+  /* font-size: 18px; */
+  /* line-height: 1.3em; */
+  /* vertical-align: top; */
+  /* margin-bottom: 1em; */
+  /* border-radius: 0.5em; */
+  /* padding: 1em; */
+
+  /* box-sizing: border-box; */
+ 
+  /* width: 100%; */
+}
+
+.everything {
+ max-width: 1200px;
+ margin:auto;
+}
+* {
+  /* background-color: lightblue; */
+}
+
+.heaad {
+  background-color: #282c34 
+}

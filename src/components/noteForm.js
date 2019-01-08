@@ -5,11 +5,18 @@ import {required, nonEmpty } from '../validators';
 import { API_BASE_URL } from '../config'
 import {postNote, fetchNotes} from '../actions'
 import { connect } from 'react-redux';
+import './noteForm.css'
 
 export class NoteForm extends React.Component {
     onSubmit(values) {
-        console.log(values);
-        this.props.dispatch(postNote(values))
+
+        // console.log(this.props.userId);
+        // const newValues = {...values, userId:this.props.userId}
+        // this.props.dispatch(postStudent(newValues, this.props.userId))
+
+        const newValues = {...values, userId: this.props.userId, studentId:this.props.studentId, }
+        console.log(newValues);
+        this.props.dispatch(postNote(newValues, this.props.userId, this.props.studentId))
 
             .then(res => {
                 if (!res.ok) {
@@ -31,7 +38,7 @@ export class NoteForm extends React.Component {
                 return;
             })
             // .then(() => console.log('Submitted with values', values))
-            .then(() => this.props.dispatch(fetchNotes()))
+            .then(() => this.props.dispatch(fetchNotes(this.props.userId, this.props.studentId)))
             .catch(err => {
                 const {reason, message, location} = err;
                 if (reason === 'ValidationError') {
@@ -75,32 +82,36 @@ export class NoteForm extends React.Component {
                 )}>
                 {successMessage}
                 {errorMessage}
+                <label className='noteFormLabel' htmlFor="subjective">Subjective</label>
                 <Field
                     name="subjective"
-                    type="text"
+                    element="textarea"
                     component={Input}
-                    label="Subjective"
+                    // label="Subjective"
                     validate={[required, nonEmpty]}
                 />
+                <label className='noteFormLabel' htmlFor="objective">Objective <br/>% accuracy of Goal: {this.props.studentGoal}</label>
                 <Field
                     name="objective"
-                    type="text"
+                    type="number"
                     component={Input}
-                    label="Objective"
+                    // label="Objective"
                     validate={[required, nonEmpty]}
                 />
+                <label className='noteFormLabel' htmlFor="assessment">Assessment</label>
                 <Field
                     name="assessment"
                     element="textarea"
                     component={Input}
-                    label="Assessment"
+                    // label="Assessment"
                     validate={[required, nonEmpty]}
                 />
+                <label className='noteFormLabel' htmlFor="plan">Plan</label>
                 <Field
                     name="plan"
-                    type="text"
+                    element="textarea"
                     component={Input}
-                    label="Plan"
+                    // label="Plan"
                     validate={[required, nonEmpty]}
                 />
                 <button
@@ -112,7 +123,19 @@ export class NoteForm extends React.Component {
         );
     }
 }
-NoteForm = connect()(NoteForm);
+const mapStateToProps = state => {
+    console.log('>>qwerty>>>', state)
+    
+    return {
+        studentId: state.student.currentStudent,
+        studentGoal: state.student.currentStudentGoals,
+        userId: state.auth.currentUser.id,
+        
+        
+        
+    };
+};
+NoteForm = connect(mapStateToProps)(NoteForm);
 
 export default reduxForm({
     form: 'note',
