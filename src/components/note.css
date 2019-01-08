@@ -3,4 +3,9 @@
 }
 .singleNoteDate {
     font-size: 30px;
+    text-decoration: underline;
+
+}
+.soap {
+    padding: 10px;
 }

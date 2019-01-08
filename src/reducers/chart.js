@@ -1,3 +1,9 @@
+// import {
+//     CLEAR_AUTH,
+    
+// } from '../actions/auth';
+
+
 const initalState = {
     isChartActive: false,
 
@@ -20,6 +26,16 @@ const note = (state = initalState, action) => {
         return {
             ...state, 
             isChartActive: false   }
+        case 'ADD_NOTE':
+        return {
+                ...state, 
+                isChartActive: false
+            }
+        case 'CLEAR_DATA':
+        return {
+                    ...initalState, 
+                    
+                }
 
         default:
           return state

@@ -61,3 +61,11 @@
 .heaad {
   background-color: #282c34 
 }
+
+
+@media (max-width: 300px) { 
+  .students, .notes {
+    display:block;
+    width: 100%;
+  }
+}

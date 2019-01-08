@@ -15,18 +15,20 @@ class Note extends Component {
     return (
       <div className='singleNoteView'> 
       <div className='singleNoteDate'>Date: {this.props.noteDate}</div>
-      <div>
+      <div >
+      <div className='soap'>
         S: {this.props.s}<br/>
         </div>
-        <div>
+        <div className='soap'>
         O: {this.props.goal}:{this.props.o}% accuracy<br/>
         </div>
-        <div>
+        <div className='soap'>
         A: {this.props.a}<br/>
         </div>
-        <div>
+        <div className='soap'>
         P: {this.props.p}<br/>
         </div>
+      </div>
       </div>
 
     );

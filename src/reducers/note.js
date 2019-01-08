@@ -23,6 +23,20 @@ const note = (state = initalState, action) => {
         return {
             ...state, 
             ...initalState }
+        case 'STUDENT_CLICKED':
+        return {
+                ...state, 
+                ...initalState }
+        case 'CLEAR_AUTH':
+        return {
+                ...state, 
+                ...initalState }
+                case 'CLEAR_DATA':
+        return {
+                    ...initalState, 
+                    
+                }
+                
 
         default:
           return state

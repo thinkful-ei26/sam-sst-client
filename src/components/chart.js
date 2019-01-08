@@ -12,7 +12,7 @@ class Chart extends React.Component{
 let charLabels = this.props.noteList.map(note =>note.createdAt);
 let chartData = this.props.noteList.map(note =>note.objective)
 let goall = this.props.studentGoal
-console.log('char',chartData);
+// console.log('char',chartData);
 
     this.state = {
         chartData:{
@@ -122,7 +122,7 @@ console.log('char',chartData);
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+    // console.log(state);
     return{
         noteList: state.studentReducer.students.find((students) => students._id.toString() === state.student.currentStudent).notes,
         studentId: state.student.currentStudent,

@@ -17,6 +17,11 @@ const student = (state = initalState, action) => {
             return {
                 ...state, 
                ...initalState}
+               case 'CLEAR_DATA':
+        return {
+                    ...initalState, 
+                    
+                }
 
         default:
           return state

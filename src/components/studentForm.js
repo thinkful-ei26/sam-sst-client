@@ -6,6 +6,7 @@ import { API_BASE_URL } from '../config'
 import { connect } from 'react-redux';
 import {postStudent, fetchStudents} from '../actions'
 import './studentForm.css'
+import {reset} from 'redux-form';
 
 
 export class StudnetForm extends React.Component {
@@ -13,7 +14,7 @@ export class StudnetForm extends React.Component {
         // console.log(this.props.userId);
         // const newValues = {...values, }
         const newValues = {...values, userId:this.props.userId }
-        console.log('>>>>>>>>>>',newValues);
+        // console.log('>>>>>>>>>>',newValues);
 
 
         this.props.dispatch(postStudent(newValues, this.props.userId))
@@ -38,6 +39,7 @@ export class StudnetForm extends React.Component {
                 return;
             })
             .then(() => this.props.dispatch(fetchStudents(this.props.userId)))
+            .then(() => this.props.dispatch(reset('student')))
             .catch(err => {
                 const {reason, message, location} = err;
                 if (reason === 'ValidationError') {
@@ -109,7 +111,7 @@ export class StudnetForm extends React.Component {
 
 
 const mapStateToProps = state => {
-    console.log('>>qwerty>>>', state)
+    // console.log('>>qwerty>>>', state)
     
     return {
         userId: state.auth.currentUser.id,

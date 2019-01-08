@@ -3,9 +3,10 @@ import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import Input from './input';
 import {required, nonEmpty } from '../validators';
 import { API_BASE_URL } from '../config'
-import {postNote, fetchNotes} from '../actions'
+import {postNote, fetchStudents} from '../actions'
 import { connect } from 'react-redux';
 import './noteForm.css'
+import {reset} from 'redux-form';
 
 export class NoteForm extends React.Component {
     onSubmit(values) {
@@ -15,7 +16,7 @@ export class NoteForm extends React.Component {
         // this.props.dispatch(postStudent(newValues, this.props.userId))
 
         const newValues = {...values, userId: this.props.userId, studentId:this.props.studentId, }
-        console.log(newValues);
+        // console.log(newValues);
         this.props.dispatch(postNote(newValues, this.props.userId, this.props.studentId))
 
             .then(res => {
@@ -38,7 +39,8 @@ export class NoteForm extends React.Component {
                 return;
             })
             // .then(() => console.log('Submitted with values', values))
-            .then(() => this.props.dispatch(fetchNotes(this.props.userId, this.props.studentId)))
+            .then(() => this.props.dispatch(fetchStudents(this.props.userId)))
+            .then(() => this.props.dispatch(reset('note')))
             .catch(err => {
                 const {reason, message, location} = err;
                 if (reason === 'ValidationError') {
@@ -124,7 +126,7 @@ export class NoteForm extends React.Component {
     }
 }
 const mapStateToProps = state => {
-    console.log('>>qwerty>>>', state)
+    // console.log('>>qwerty>>>', state)
     
     return {
         studentId: state.student.currentStudent,

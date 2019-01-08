@@ -66,7 +66,11 @@ export const viewNotesPushed = () => {
         type:'VIEW_NOTES_PUSHED',  
     }
 }
-
+export const clearData = () => {
+    return {
+        type:'CLEAR_DATA',  
+    }
+}
 
 
 export const fetchNotes = (userId, studentId) => dispatch => {

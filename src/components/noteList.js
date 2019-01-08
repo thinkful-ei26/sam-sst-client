@@ -10,7 +10,7 @@ import './noteList.css';
 class Notes extends Component {
 
 componentDidMount() {
-    this.props.dispatch(fetchNotes(this.props.userId, this.props.studentId))
+    // this.props.dispatch(fetchNotes(this.props.userId, this.props.studentId))
 }
 
   render() {
@@ -24,7 +24,7 @@ componentDidMount() {
     return (
       <div className="Notes">
       <h4>Notes</h4>
-      <button className="addNote" onClick={() =>this.props.dispatch(addNote())}>Add Note</button>    
+      {/* <button className="addNote" onClick={() =>this.props.dispatch(addNote())}>Add Note</button>     */}
       <ul className='notesListt'>
        {notes}
        </ul>
@@ -34,7 +34,7 @@ componentDidMount() {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+    // console.log(state);
     return{
         noteList: state.studentReducer.students.find((students) => students._id.toString() === state.student.currentStudent).notes,
         studentId: state.student.currentStudent,

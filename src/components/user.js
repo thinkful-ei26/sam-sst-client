@@ -21,7 +21,7 @@ componentDidMount() {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+    // console.log(state);
     return{
         name: state.userReducer.name,
         status: state.userReducer.status
