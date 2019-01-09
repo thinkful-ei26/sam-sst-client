@@ -17,7 +17,7 @@ componentDidMount() {
     const notes = this.props.noteList.map(note =>
         <li className="noteListTime">   
         <button className="noteListButton" onClick={() =>this.props.dispatch(noteClicked(note._id, note.subjective, note.objective, note.assessment, note.plan, note.createdAt))}>                          
-            {note.createdAt}
+        {note.createdAt}
         </button>
         </li>
     );

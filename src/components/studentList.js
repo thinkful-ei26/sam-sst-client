@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import './studnet.css';
 import { connect } from 'react-redux';
 import { fetchStudents } from '../actions';
 import {Link} from 'react-router-dom'
@@ -18,20 +17,17 @@ componentDidMount() {
 //     return this.props.dispatch(studentClicked());
 // }
   render() {
-    const students = this.props.studentList.map(studnet =>
-        <li className="studnetName" key={student.name}>    
-           <button className="studentButton" onClick={() =>this.props.dispatch(studentClicked(studnet._id, studnet.name, studnet.goals))}>
-          {/* <button Submit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )} > */}
-          {studnet.name}
+    const students = this.props.studentList.map(student =>
+        <li className="studentName" key={student.name}>    
+           <button className="studentButton" onClick={() =>this.props.dispatch(studentClicked(student._id, student.name, student.goals))}>
+         
+          {student.name}
                 </button>       
-           {/* <Link to={'/'+studnet._id}> {studnet.name}</Link> */}
         </li>
     );
     return (
         <div className="stl">
-        <button className="addStudent, cool" onClick={() =>this.props.dispatch(addStudent())}>Add Studnet</button> 
+        <button className="addStudent, cool" onClick={() =>this.props.dispatch(addStudent())}>Add Student</button> 
       
       <h4>Students</h4>
       <div >
