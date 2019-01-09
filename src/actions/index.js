@@ -82,6 +82,22 @@ export const fetchNotes = (userId, studentId) => dispatch => {
     
 }
 
+
+export const deleteStudent = (values, userId) => dispatch => {
+    let newValues = { studentId: values}
+    console.log(newValues)
+    return fetch(`${API_BASE_URL}/api/students/${userId}`, {
+        method: 'DELETE',
+        body: JSON.stringify(newValues),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        
+    })
+    // .then(()=>dispatch(fetchStudents(userId)))
+}
+
+
 export const fetchStudentsSuccess = (data) => {
     return {
         type:'FETCH_STUDENT_SUCCESS',
@@ -100,6 +116,7 @@ export const fetchStudents = (userId) => dispatch => {
 }
 
 export const postStudent = (values, userId) => dispatch => {
+    console.log('>>>>>>',values)
     return fetch(`${API_BASE_URL}/api/students/${userId}`, {
         method: 'POST',
         body: JSON.stringify(values),

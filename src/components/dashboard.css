@@ -63,7 +63,7 @@
 }
 
 
-@media (max-width: 300px) { 
+@media (max-width: 500px) { 
   .students, .notes {
     display:block;
     width: 100%;

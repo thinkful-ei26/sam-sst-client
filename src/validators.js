@@ -25,3 +25,9 @@ export const matches = field => (value, allValues) =>
     field in allValues && value.trim() === allValues[field].trim()
         ? undefined
         : 'Does not match';
+
+export const percentMax = value =>
+  value && value > 100 ? '% Can not be over 100' : undefined
+
+  export const percentMin = value =>
+  value && value < 0 ? '% Can not be under 0' : undefined

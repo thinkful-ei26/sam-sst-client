@@ -31,9 +31,9 @@ const note = (state = initalState, action) => {
         return {
                 ...state, 
                 ...initalState }
-                case 'CLEAR_DATA':
+        case 'CLEAR_DATA':
         return {
-                    ...initalState, 
+                ...initalState, 
                     
                 }
                 

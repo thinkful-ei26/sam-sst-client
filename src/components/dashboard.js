@@ -14,18 +14,6 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        // if (this.props.studnet) {
-        //     return (
-        //         <div >
-        //     <HeaderBar />
-        //     <Students />
-        //     <Notes />
-        //     <Chart />
-        //     </div>
-        //     );
-        // }
-    
-        
         return (
             <div className='everything'>
             <div className="heaad">
@@ -40,10 +28,9 @@ export class Dashboard extends React.Component {
             <Notes />
             </div>
             <div className="">
-            {/* <Chart /> */}
             </div>
             </div>
-            {/* <Notes /> */}
+           
             
             
             </div>
@@ -66,7 +53,7 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data,
-        studnet: state.student.currentStudent 
+       
     };
 };
 

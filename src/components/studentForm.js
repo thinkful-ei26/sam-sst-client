@@ -9,7 +9,7 @@ import './studentForm.css'
 import {reset} from 'redux-form';
 
 
-export class StudnetForm extends React.Component {
+export class StudentForm extends React.Component {
     onSubmit(values) {
         // console.log(this.props.userId);
         // const newValues = {...values, }
@@ -119,11 +119,11 @@ const mapStateToProps = state => {
     };
 };
 
-StudnetForm = connect(mapStateToProps)(StudnetForm);
+StudentForm = connect(mapStateToProps)(StudentForm);
 
 export default reduxForm({
     form: 'student',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('student', Object.keys(errors)[0]))
-})(StudnetForm);
+})(StudentForm);
 

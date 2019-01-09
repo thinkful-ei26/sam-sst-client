@@ -35,7 +35,7 @@
     border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
-    margin-right: 50px;
+    margin-right: 10px;
     text-decoration: none;
     background: #0069ed;
     color: #ffffff;
@@ -75,4 +75,39 @@
 .studentHeader, .goalHeader {
     margin-left: 10px;
     
+}
+.deleteStudent {
+    /* display: inline-block; */
+    border: none;
+    float: left;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    background: darkred;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.deleteStudent:hover,
+.deleteStudent:focus {
+    background: red;
+}
+
+.deleteStudent:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.deleteStudent:active {
+    transform: scale(0.99);
 }
