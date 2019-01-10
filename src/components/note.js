@@ -14,7 +14,7 @@ class Note extends Component {
   render() {
     return (
       <div className='singleNoteView'> 
-      <div className='singleNoteDate'>Date: {this.props.noteDate}</div>
+      <div className='singleNoteDate'>Date: {this.props.noteDate}.toDateString()</div>
       <div >
       <div className='soap'>
         S: {this.props.s}<br/>

@@ -145,7 +145,8 @@ export const postNote = (values, userId, studentId) => dispatch => {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
     })
 }
