@@ -2,7 +2,7 @@ import React from 'react';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import Input from './input';
 import {required, nonEmpty, percentMax, percentMin } from '../validators';
-import { API_BASE_URL } from '../config'
+// import { API_BASE_URL } from '../config'
 import {postNote, fetchStudents} from '../actions'
 import { connect } from 'react-redux';
 import './noteForm.css'

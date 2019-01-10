@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './loginForm';
-import User from './user';
+
 import NoteForm from './noteForm';
 import { connect } from 'react-redux';
 import NoteList from './noteList';
 import StudentForm from './studentForm';
-import StudentList from './studentList';
 import './notes.css'
 import Note from './note';
 import Chart from './chart';
-import { stPushed, viewNotesPushed, addNote, deleteStudent } from '../actions';
+import { stPushed, viewNotesPushed, addNote, deleteStudent, fetchStudents } from '../actions';
 
 
 class Notes extends Component {
@@ -26,6 +24,11 @@ class Notes extends Component {
   // if (this.props.charTrue) {
   //   <Chart />
   // }
+  dStu() {
+    this.props.dispatch(deleteStudent(this.props.studentId, this.props.userId));
+    // this.props.dispatch(fetchStudents(this.props.userId));
+   
+}
   render() {
     if (this.props.studentName === null) {
       return (
@@ -39,7 +42,7 @@ class Notes extends Component {
       <div> 
         <h1 className='studentHeader'>{this.props.studentName}
           {/* <button className="stPushed, butt " onClick={() =>this.props.dispatch(stPushed())}>View Student Tracker</button>  */}
-          <button className="deleteStudent" onClick={() =>this.props.dispatch(deleteStudent(this.props.studentId, this.props.userId))}>Delete Student</button>  
+          <button className="deleteStudent" onClick={() =>this.dStu()}>Delete Student</button>  
     {this.props.charTrue ?<button className="viewNotesPushed, butt" onClick={() =>this.props.dispatch(viewNotesPushed())}>View Notes</button> :  <button className="stPushed, butt " onClick={() =>this.props.dispatch(stPushed())}>View Student Tracker</button> } 
           <button className="addNote, butt" onClick={() =>this.props.dispatch(addNote())}>Add Note</button>  
 

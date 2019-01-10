@@ -111,3 +111,13 @@
 .deleteStudent:active {
     transform: scale(0.99);
 }
+
+
+
+@media (max-width: 500px) { 
+    .noteList, .noteForm {
+      display:block;
+      width: 100%;
+      
+    }
+  }

@@ -24,6 +24,13 @@ export const fetchNotesSuccess = (data) => {
         data
     }
 }
+export const deleteStudentSuccess = () => {
+    return {
+        type:'DELETE_STUDENT_SUCCESS',
+         }
+}
+
+
 export const studentClicked = (id, name, goals) => {
     return {
         type:'STUDENT_CLICKED',
@@ -90,11 +97,13 @@ export const deleteStudent = (values, userId) => dispatch => {
         method: 'DELETE',
         body: JSON.stringify(newValues),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
         
     })
-    // .then(()=>dispatch(fetchStudents(userId)))
+    .then(()=>dispatch(clearData()))
+    .then(()=>dispatch(fetchStudents(userId)))
 }
 
 
@@ -107,7 +116,11 @@ export const fetchStudentsSuccess = (data) => {
 
 // use this way
 export const fetchStudents = (userId) => dispatch => {
-    fetch(`${API_BASE_URL}/api/students/${userId}`)
+    fetch(`${API_BASE_URL}/api/students/${userId}`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        }
+      })
     .then(res => res.json())
     .then(data => dispatch(fetchStudentsSuccess(data)))
     .catch(error => console.log(error))
@@ -121,7 +134,8 @@ export const postStudent = (values, userId) => dispatch => {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
     })
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
-import HeaderBar from './headerBar';
+// import HeaderBar from './headerBar';
 import LandingPage from './landingPage';
 import Dashboard from './dashboard';
 import RegistrationPage from './registrationPage';

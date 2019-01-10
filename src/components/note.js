@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './loginForm';
-import User from './user';
-import NoteForm from './noteForm';
+// import Login from './loginForm';
+// import User from './user';
+// import NoteForm from './noteForm';
 import { connect } from 'react-redux';
-import NoteList from './noteList';
-import StudentForm from './studentForm';
-import StudentList from './studentList';
+// import NoteList from './noteList';
+// import StudentForm from './studentForm';
+// import StudentList from './studentList';
 import './note.css'
 
 

@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchStudents } from '../actions';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {studentClicked, addStudent} from '../actions'
 import './studentList.css';
-import student from '../reducers/student';
+// import student from '../reducers/student';
 
 
 
 class Students extends Component {
 
 componentDidMount() {
+    console.log(this.props.userId)
     this.props.dispatch(fetchStudents(this.props.userId))
 }
 // onSubmit(values) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './note.css';
 import { connect } from 'react-redux';
-import { fetchNotes } from '../actions';
-import {noteClicked, addNote} from '../actions'
+// import { fetchNotes } from '../actions';
+import {noteClicked, } from '../actions'
 import './noteList.css';
 
 

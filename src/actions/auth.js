@@ -4,6 +4,7 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../localStorage';
+import { fetchStudents } from './index';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -37,18 +38,21 @@ export const authError = error => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
+    saveAuthToken(authToken);
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
-    saveAuthToken(authToken);
+    
 };
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
+    // dispatch(fetchStudents());
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+
             },
             body: JSON.stringify({
                 username,
@@ -62,6 +66,11 @@ export const login = (username, password) => dispatch => {
             // .then(res => console.log(res))
             
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+            // .then(({authToken, userId}) => {
+            //     storeAuthInfo(authToken, dispatch)
+            //     fetchStudents(userId)
+            // })
+            // .then(({userId}) => dispatch(fetchStudents(userId)))
             // .then(response => {  localStorage.setItem('userId', response.userId)})
             .catch(err => {
                 const {code} = err;

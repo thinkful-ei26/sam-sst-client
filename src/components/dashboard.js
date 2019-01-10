@@ -5,7 +5,7 @@ import {fetchProtectedData} from '../actions/protectedData';
 import HeaderBar from './headerBar';
 import Students from './students';
 import Notes from './notes';
-import Chart from './chart';
+// import Chart from './chart';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
