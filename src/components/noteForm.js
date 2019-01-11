@@ -117,7 +117,7 @@ export class NoteForm extends React.Component {
                     // label="Plan"
                     validate={[required, nonEmpty]}
                 />
-                <button
+                <button 
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Submit Note

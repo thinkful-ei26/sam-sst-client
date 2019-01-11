@@ -3,7 +3,9 @@ import './note.css';
 import { connect } from 'react-redux';
 // import { fetchNotes } from '../actions';
 import {noteClicked, } from '../actions'
+import moment from 'moment'
 import './noteList.css';
+
 
 
 
@@ -12,14 +14,23 @@ class Notes extends Component {
 componentDidMount() {
     // this.props.dispatch(fetchNotes(this.props.userId, this.props.studentId))
 }
-
+noteListButton(note){
+    this.props.dispatch(noteClicked(note._id, note.subjective, note.objective, note.assessment, note.plan, note.createdAt))
+}
   render() {
     const notes = this.props.noteList.map(note =>
+        
         <li className="noteListTime">   
-        <button className="noteListButton" onClick={() =>this.props.dispatch(noteClicked(note._id, note.subjective, note.objective, note.assessment, note.plan, note.createdAt))}>                          
-        {note.createdAt}
+        <button className="noteListButton" onClick={() => this.noteListButton(note)}>                          
+       
+        {moment(note.createdAt).format("MMM Do YYYY")}
         </button>
         </li>
+        // <li className="noteListTime">   
+        // <button className="noteListButton" onClick={() =>this.props.dispatch(noteClicked(note._id, note.subjective, note.objective, note.assessment, note.plan, note.createdAt))}>                          
+        // {note.createdAt}
+        // </button>
+        // </li>
     );
     return (
       <div className="Notes">

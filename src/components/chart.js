@@ -12,7 +12,6 @@ class Chart extends React.Component{
 let charLabels = this.props.noteList.map(note =>note.createdAt);
 let chartData = this.props.noteList.map(note =>note.objective)
 let goall = this.props.studentGoal
-// console.log('char',chartData);
 
     this.state = {
         chartData:{
@@ -32,51 +31,19 @@ let goall = this.props.studentGoal
                   
               ]
               },
-            //   {
-            //     label:'Goal.name.1',
-            //     fill: false,
-            //     data:[
-            //       5,
-            //       10,
-            //       30,
-            //       60,
-            //       80,
-            //       90
-            //     ],
-            //     backgroundColor:[
-            //     //   'rgba(255, 99, 132, 0.6)',
-            //       'rgba(54, 162, 235, 0.6)',
-            //       'rgba(255, 206, 86, 0.6)',
-            //       'rgba(75, 192, 192, 0.6)',
-            //       'rgba(153, 102, 255, 0.6)',
-            //       'rgba(255, 159, 64, 0.6)',
-            //       'rgba(255, 99, 132, 0.6)'
-            //     ]
-            //   }
+            
             ]
           }
     }
   }
 
-//   static defaultProps = {
-//     displayTitle:true,
-//     displayLegend: true,
-//     legendPosition:'right',
-//     location:'City'
-//   }
 
   render(){
     return (
       <div className="chart">
-        {/* <Bar
-          data={this.state.chartData}
-          options={{}}
-        /> */}
 
         <Line
           data={this.state.chartData}
-          // width={100}
-	        // height={50}
           options={{
             title:{
               display:false,

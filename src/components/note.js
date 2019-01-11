@@ -8,13 +8,15 @@ import { connect } from 'react-redux';
 // import StudentForm from './studentForm';
 // import StudentList from './studentList';
 import './note.css'
+import moment from 'moment'
+
 
 
 class Note extends Component {
   render() {
     return (
       <div className='singleNoteView'> 
-      <div className='singleNoteDate'>Date: {this.props.noteDate}.toDateString()</div>
+      <div className='singleNoteDate'>Date: {moment(this.props.noteDate).format("MMM Do YYYY")}</div>
       <div >
       <div className='soap'>
         S: {this.props.s}<br/>

@@ -8,22 +8,11 @@ import StudentForm from './studentForm';
 import './notes.css'
 import Note from './note';
 import Chart from './chart';
-import { stPushed, viewNotesPushed, addNote, deleteStudent, fetchStudents } from '../actions';
+import { stPushed, viewNotesPushed, addNote, deleteStudent, } from '../actions';
 
 
 class Notes extends Component {
 
-  // let charty = <div>
-  //         <div className='noteList'>
-  //         <NoteList/>
-  //         </div>
-  //         <div className='noteForm'>
-  //           {this.props.newNoteTrue ? <Note/> : <NoteForm/>}
-  //         </div>
-  //       </div>;
-  // if (this.props.charTrue) {
-  //   <Chart />
-  // }
   dStu() {
     this.props.dispatch(deleteStudent(this.props.studentId, this.props.userId));
     // this.props.dispatch(fetchStudents(this.props.userId));
@@ -41,7 +30,6 @@ class Notes extends Component {
     return (
       <div> 
         <h1 className='studentHeader'>{this.props.studentName}
-          {/* <button className="stPushed, butt " onClick={() =>this.props.dispatch(stPushed())}>View Student Tracker</button>  */}
           <button className="deleteStudent" onClick={() =>this.dStu()}>Delete Student</button>  
     {this.props.charTrue ?<button className="viewNotesPushed, butt" onClick={() =>this.props.dispatch(viewNotesPushed())}>View Notes</button> :  <button className="stPushed, butt " onClick={() =>this.props.dispatch(stPushed())}>View Student Tracker</button> } 
           <button className="addNote, butt" onClick={() =>this.props.dispatch(addNote())}>Add Note</button>  

@@ -62,16 +62,8 @@ export const login = (username, password) => dispatch => {
             // Reject any requests which don't return a 200 status, creating
             // errors which follow a consistent format
             .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            // .then(res => console.log(res))
-            
+            .then(res => res.json()) 
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            // .then(({authToken, userId}) => {
-            //     storeAuthInfo(authToken, dispatch)
-            //     fetchStudents(userId)
-            // })
-            // .then(({userId}) => dispatch(fetchStudents(userId)))
-            // .then(response => {  localStorage.setItem('userId', response.userId)})
             .catch(err => {
                 const {code} = err;
                 const message =

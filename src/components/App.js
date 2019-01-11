@@ -26,7 +26,7 @@ export class App extends React.Component {
     startPeriodicRefresh() {
         this.refreshInterval = setInterval(
             () => this.props.dispatch(refreshAuthToken()),
-            60 * 60 * 1000 // One hour
+            60 * 60 * 1000 
         );
     }
 
@@ -54,43 +54,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App));
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react';
-// import './App.css';
-// import Login from './loginForm';
-// import User from './user';
-// import NoteForm from './noteForm';
-// import { connect } from 'react-redux';
-// import NoteList from './noteList';
-// import StudentForm from './studentForm';
-// import StudentList from './studentList';
-
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div> 
-//         <User/>
-//         <NoteList/>
-//         <NoteForm/>
-//         <StudentForm/>
-//         <StudentList />
-
-//       </div>
-
-//     );
-//   }
-// }
-
-// export default connect()(App);

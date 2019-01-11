@@ -10,7 +10,7 @@ export const fetchUserSuccess = (data) => {
 
 
 export const fetchUser = () => dispatch => {
-    fetch(`${API_BASE_URL}/user`)
+    return fetch(`${API_BASE_URL}/user`)
     .then(res => res.json())
     .then(data => dispatch(fetchUserSuccess(data)))
     .catch(error => console.log(error))
@@ -18,17 +18,7 @@ export const fetchUser = () => dispatch => {
     
 }
 
-export const fetchNotesSuccess = (data) => {
-    return {
-        type:'FETCH_NOTES_SUCCESS',
-        data
-    }
-}
-export const deleteStudentSuccess = () => {
-    return {
-        type:'DELETE_STUDENT_SUCCESS',
-         }
-}
+
 
 
 export const studentClicked = (id, name, goals) => {
@@ -73,6 +63,7 @@ export const viewNotesPushed = () => {
         type:'VIEW_NOTES_PUSHED',  
     }
 }
+
 export const clearData = () => {
     return {
         type:'CLEAR_DATA',  
@@ -80,15 +71,12 @@ export const clearData = () => {
 }
 
 
-export const fetchNotes = (userId, studentId) => dispatch => {
-    fetch(`${API_BASE_URL}/api/notes/${userId}/${studentId}`)
-    .then(res => res.json())
-    .then(data => dispatch(fetchNotesSuccess(data)))
-    .catch(error => console.log(error))
-    
-    
-}
 
+export const deleteStudentSuccess = () => {
+    return {
+        type:'DELETE_STUDENT_SUCCESS',
+         }
+}
 
 export const deleteStudent = (values, userId) => dispatch => {
     let newValues = { studentId: values}
@@ -152,5 +140,20 @@ export const postNote = (values, userId, studentId) => dispatch => {
 }
 
 
+// export const fetchNotes = (userId, studentId) => dispatch => {
+//     fetch(`${API_BASE_URL}/api/notes/${userId}/${studentId}`)
+//     .then(res => res.json())
+//     .then(data => dispatch(fetchNotesSuccess(data)))
+//     .catch(error => console.log(error))
+    
+    
+// }
+
+// export const fetchNotesSuccess = (data) => {
+//     return {
+//         type:'FETCH_NOTES_SUCCESS',
+//         data
+//     }
+// }
 
 
