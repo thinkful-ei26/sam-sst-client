@@ -8,6 +8,8 @@ https://slpst.herokuapp.com/
 React and Redux for the client. Node for the server with a MongoDB
 
 ## Code Description:
+  #servercode:
+    https://github.com/thinkful-ei26/sam-sst-server
   #src/components/landingPage.js
     Where a user will first arrive and login or register 
   #src/components/dashboard.js
