@@ -23,7 +23,7 @@ export function LandingPage(props) {
               View progress of students to determine if treatment is working.
             </p>
             <p>
-              Not Sure? Check it out with username: demoteacher  password: 0123456789
+              Not Sure? Check it out with username: demoteacher,  password: 0123456789
             </p>
             </div>
             <div className='logIn'>
