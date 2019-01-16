@@ -73,12 +73,18 @@ let goall = this.props.studentGoal
               enabled:true
             },
             scales: {
+              
               yAxes: [{
                   ticks: {
                       beginAtZero:true,
                       max:100
                   }
-              }]
+              }],
+              xAxes: [{
+                ticks: {
+                    display: false //this will remove only the label
+                }
+            }]
           }
             // maintainAspectRatio: false
           }}

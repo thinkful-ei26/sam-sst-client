@@ -11,9 +11,9 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className='everything'>
-            <div className="heaad">
+            {/* <div className="heaad"> */}
             <HeaderBar />
-            </div>
+            {/* </div> */}
             <div className="dash">
             <div  className="students ib">
             <Students />

@@ -28,7 +28,7 @@ componentDidMount() {
     );
     return (
         <div className="stl">
-        <button className="addStudent, cool" onClick={() =>this.props.dispatch(addStudent())}>Add Student</button> 
+        <button className="cool" onClick={() =>this.props.dispatch(addStudent())}>Add Student</button> 
       
       <h4>Students</h4>
       <div >

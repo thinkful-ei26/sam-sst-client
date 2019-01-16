@@ -35,7 +35,7 @@ class Notes extends Component {
           <button className="addNote, butt" onClick={() =>this.props.dispatch(addNote())}>Add Note</button>  
 
         </h1>
-        <h3 className='goalHeader'>Goal: {this.props.goal}</h3>
+        <div className='goalHeader'>Goal: {this.props.goal}</div>
 {this.props.charTrue ?<Chart /> :
         <div className='noteArea'>
           <div className='noteList'>

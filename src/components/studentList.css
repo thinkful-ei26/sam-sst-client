@@ -9,7 +9,7 @@ ul {
 
 .studentsListt {
     overflow:  auto;
-    height: 380px;
+    max-height: 420px;
     padding: 0px;
     
 }
@@ -83,3 +83,10 @@ ul {
 .cool:active {
     transform: scale(0.99);
 }
+
+@media (max-width: 500px) { 
+    .studentsListt {
+        max-height: 180px;
+        /* border-bottom: blue solid 6px; */
+    } 
+  }

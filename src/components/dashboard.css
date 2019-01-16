@@ -4,27 +4,33 @@
 
 
 .students {
-  background: lightblue;
-  border: solid blue 1px;
-  height: 600px;
+  /* background: lightblue; */
+  /* border: solid blue 1px; */
+  /* border-top: solid blue 6px; */
+  /* height: 600px; */
+  max-height: 600px;
   display: inline-block;
   padding: 0px;
   width:20%;
   margin: auto;
   box-sizing: border-box;
   vertical-align: top;
+  margin-top: 65px;
 
 }
 .notes {
-  background: lightblue;
-  border: solid blue 1px;
-  height: 600px;
+  /* background: lightblue; */
+  /* border: solid blue 1px; */
+  /* border-top: solid blue 6px; */
+  /* height: 600px; */
+  
   display: inline-block;
   padding: 0px;
   width:80%;
   margin: auto;
   box-sizing: border-box;
   vertical-align: top;
+  margin-top: 60px;
 }
 
 .chart {
@@ -46,7 +52,8 @@
   /* width: 100%; */
 }
 
-.everything {
+.dash {
+  /* .everything { */
  max-width: 1200px;
  margin:auto;
 }
@@ -55,7 +62,7 @@
 }
 
 .heaad {
-  background-color: #282c34 
+  /* background-color: #282c34  */
 }
 
 
@@ -64,4 +71,7 @@
     display:block;
     width: 100%;
   }
+  .students {
+  border-bottom: blue solid 6px;
+}
 }

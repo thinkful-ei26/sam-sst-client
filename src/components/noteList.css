@@ -1,6 +1,7 @@
 .notesListt {
     overflow:  auto;
-    height: 350px;
+    /* height: 350px; */
+    max-height: 340px;
     padding: 0px;
     margin-right: 10px;
 }
@@ -43,3 +44,9 @@
 .noteListButton:active {
     transform: scale(.95);
 }
+
+@media (max-width: 500px) { 
+    .notesListt {
+        max-height: 180px;
+    } 
+  }

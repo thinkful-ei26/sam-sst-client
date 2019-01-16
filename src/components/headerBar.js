@@ -21,13 +21,13 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="header-bar">
+            <header className="header-bar">
             
-                <div className="dashboard-name">Welcome {this.props.name}</div>
+                <div className="dashboard-name">{this.props.name}</div>
                 <div className='logoutB'>
                 {logOutButton}
                 </div>
-            </div>
+            </header>
         );
     }
 }

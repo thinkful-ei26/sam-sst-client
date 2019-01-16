@@ -1,7 +1,7 @@
 .noteList {
-    background: lightblue;
+    /* background: lightblue; */
     /* border: solid blue 1px; */
-    height: 300px;
+    /* height: 300px; */
     display: inline-block;
     padding: 0px;
     width:25%;
@@ -11,7 +11,7 @@
   
   }
   .noteForm {
-    background: lightblue;
+    /* background: lightblue; */
     /* border: solid blue 1px; */
     height: 300px;
     display: inline-block;
@@ -76,6 +76,12 @@
     margin-left: 10px;
     
 }
+
+.goalHeader{
+ font-size: 28px;
+ padding-top: 20px;
+}
+
 .deleteStudent {
     /* display: inline-block; */
     border: none;
@@ -115,9 +121,27 @@
 
 
 @media (max-width: 500px) { 
-    .noteList, .noteForm {
+    .noteList, .noteForm, .studentHeader, .goalHeader {
       display:block;
       width: 100%;
       
+    }
+    .butt, .deleteStudent{
+        display: block;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top:10px;
+        /* margin-left:10px; */
+        /* margin-right:20px; */
+        padding: 10px;
+        float: none;
+    }
+    .studentHeader {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .deleteStudent{
+        display: none;
     }
   }
