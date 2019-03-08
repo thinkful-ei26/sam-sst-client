@@ -2,12 +2,7 @@
     box-sizing: border-box;
 }
 
-
 .students {
-  /* background: lightblue; */
-  /* border: solid blue 1px; */
-  /* border-top: solid blue 6px; */
-  /* height: 600px; */
   max-height: 600px;
   display: inline-block;
   padding: 0px;
@@ -16,14 +11,9 @@
   box-sizing: border-box;
   vertical-align: top;
   margin-top: 65px;
-
 }
+
 .notes {
-  /* background: lightblue; */
-  /* border: solid blue 1px; */
-  /* border-top: solid blue 6px; */
-  /* height: 600px; */
-  
   display: inline-block;
   padding: 0px;
   width:80%;
@@ -33,38 +23,10 @@
   margin-top: 60px;
 }
 
-.chart {
-    /* display:flex;  */
-    /* display: inline-block; */
-    /* display: inline; */
-}
-
 .dash {
-  /* font-size: 18px; */
-  /* line-height: 1.3em; */
-  /* vertical-align: top; */
-  /* margin-bottom: 1em; */
-  /* border-radius: 0.5em; */
-  /* padding: 1em; */
-
-  /* box-sizing: border-box; */
- 
-  /* width: 100%; */
-}
-
-.dash {
-  /* .everything { */
  max-width: 1200px;
  margin:auto;
 }
-* {
-  /* background-color: lightblue; */
-}
-
-.heaad {
-  /* background-color: #282c34  */
-}
-
 
 @media (max-width: 500px) { 
   .students, .notes {
@@ -73,5 +35,5 @@
   }
   .students {
   border-bottom: blue solid 6px;
-}
+  }
 }

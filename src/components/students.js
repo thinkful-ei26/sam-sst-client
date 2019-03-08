@@ -10,7 +10,6 @@ class Student extends Component {
       <div className='studentss'> 
         <StudentList/>
       </div>
-
     );
   }
 }

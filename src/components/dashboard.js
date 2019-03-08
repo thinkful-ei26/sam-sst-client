@@ -8,39 +8,29 @@ import './dashboard.css';
 
 export class Dashboard extends React.Component {
 
-    render() {
-        return (
-            <div className='everything'>
-            {/* <div className="heaad"> */}
-            <HeaderBar />
-            {/* </div> */}
-            <div className="dash">
-            <div  className="students ib">
+  render() {
+    return (
+      <div className='everything'>
+        <HeaderBar />
+        <div className="dash">
+          <div  className="students ib">
             <Students />
-            </div>
-            <div  className="notes ib">
-            
+          </div>
+          <div  className="notes ib">
             <Notes />
-            </div>
-            <div className="">
-            </div>
-            </div>
-           
-            
-            
-            </div>   
-       );
-    }
+          </div>
+        </div>
+      </div>   
+    );
+  }
 }
 
 const mapStateToProps = state => {
-    console.log('>><>>',state)
-    const {currentUser} = state.auth;
-    return {
-        username: state.auth.currentUser.username,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
-       
-    };
+  const {currentUser} = state.auth;
+  return {
+    username: state.auth.currentUser.username,
+    name: `${currentUser.firstName} ${currentUser.lastName}`,
+  };
 };
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));

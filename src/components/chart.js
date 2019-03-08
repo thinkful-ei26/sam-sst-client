@@ -8,32 +8,23 @@ class Chart extends React.Component{
   constructor(props){
     super(props);
 
-// let charLabels = []
-let charLabels = this.props.noteList.map(note =>note.createdAt);
-let chartData = this.props.noteList.map(note =>note.objective)
-let goall = this.props.studentGoal
+    let charLabels = this.props.noteList.map(note =>note.createdAt);
+    let chartData = this.props.noteList.map(note =>note.objective)
+    let goall = this.props.studentGoal
 
     this.state = {
-        chartData:{
-            labels: charLabels,
-            datasets:[
-              {
-                label: goall,
-                
-                fill: false,
-                data:chartData,
-                backgroundColor:[
-                  'rgba(255, 99, 132, 0.6)',
-                ],
-                color: [
-            
-                  'green'
-                  
-              ]
-              },
-            
-            ]
+      chartData:{
+        labels: charLabels,
+        datasets:[
+          {
+            label: goall,
+            fill: false,
+            data:chartData,
+            backgroundColor:['rgba(255, 99, 132, 0.6)',],
+            color: ['green']
           }
+        ]
+      }
     }
   }
 
@@ -41,7 +32,6 @@ let goall = this.props.studentGoal
   render(){
     return (
       <div className="chart">
-
         <Line
           data={this.state.chartData}
           options={{
@@ -64,28 +54,25 @@ let goall = this.props.studentGoal
 
             },
             width:{
-
             },
 	          height:{
-
             },
             tooltips: {
               enabled:true
             },
-            scales: {
-              
+            scales: {   
               yAxes: [{
-                  ticks: {
-                      beginAtZero:true,
-                      max:100
-                  }
+                ticks: {
+                  beginAtZero:true,
+                  max:100
+                }
               }],
               xAxes: [{
                 ticks: {
-                    display: false //this will remove only the label
+                  display: false //this will remove only the label
                 }
-            }]
-          }
+              }]
+            }
             // maintainAspectRatio: false
           }}
         />
@@ -95,13 +82,12 @@ let goall = this.props.studentGoal
 }
 
 const mapStateToProps = state => {
-    // console.log(state);
-    return{
-        noteList: state.studentReducer.students.find((students) => students._id.toString() === state.student.currentStudent).notes,
-        studentId: state.student.currentStudent,
-        studentGoal: state.student.currentStudentGoals,
-        userId: state.auth.currentUser.id,
-    }
+  return{
+    noteList: state.studentReducer.students.find((students) => students._id.toString() === state.student.currentStudent).notes,
+    studentId: state.student.currentStudent,
+    studentGoal: state.student.currentStudentGoals,
+    userId: state.auth.currentUser.id,
+  }
 }
 
 export default connect(mapStateToProps)(Chart);

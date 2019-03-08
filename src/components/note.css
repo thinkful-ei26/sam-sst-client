@@ -1,11 +1,12 @@
 .singleNoteView {
-    font-size: 25px;
+  font-size: 25px;
 }
-.singleNoteDate {
-    font-size: 30px;
-    text-decoration: underline;
 
+.singleNoteDate {
+  font-size: 30px;
+  text-decoration: underline;
 }
+
 .soap {
-    padding: 10px;
+  padding: 10px;
 }

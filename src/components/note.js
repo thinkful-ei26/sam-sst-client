@@ -1,41 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Login from './loginForm';
-// import User from './user';
-// import NoteForm from './noteForm';
 import { connect } from 'react-redux';
-// import NoteList from './noteList';
-// import StudentForm from './studentForm';
-// import StudentList from './studentList';
 import './note.css'
 import moment from 'moment'
-
-
 
 class Note extends Component {
   render() {
     return (
       <div className='singleNoteView'> 
-      <div className='singleNoteDate'>Date: {moment(this.props.noteDate).format("MMM Do YYYY")}</div>
-      <div >
-      <div className='soap'>
-        S: {this.props.s}<br/>
+        <div className='singleNoteDate'>
+          Date: {moment(this.props.noteDate).format("MMM Do YYYY")}
         </div>
-        <div className='soap'>
-        O: {this.props.goal}:{this.props.o}% accuracy<br/>
-        </div>
-        <div className='soap'>
-        A: {this.props.a}<br/>
-        </div>
-        <div className='soap'>
-        P: {this.props.p}<br/>
+        <div>
+          <div className='soap'>
+            S: {this.props.s}<br/>
+          </div>
+          <div className='soap'>
+            O: {this.props.goal}:{this.props.o}% accuracy<br/>
+          </div>
+          <div className='soap'>
+            A: {this.props.a}<br/>
+          </div>
+          <div className='soap'>
+            P: {this.props.p}<br/>
+          </div>
         </div>
       </div>
-      </div>
-
     );
   }
 }
+
 const mapStateToProps = state => ({
   noteDate: state.note.currentNoteCreatedAt,
   s: state.note.currentNoteSubjective,
