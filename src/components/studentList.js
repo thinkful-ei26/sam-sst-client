@@ -7,7 +7,6 @@ import './studentList.css';
 class Students extends Component {
 
   componentDidMount() {
-      console.log(this.props.userId)
       this.props.dispatch(fetchStudents(this.props.userId))
   }
 
