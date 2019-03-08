@@ -12,15 +12,18 @@ React and Redux for the client. Node for the server with a MongoDB
 
 ## ScreenShots
 <div align="center">
-  <img src="./slp.svg">
+  <img src="./slpst.svg">
 </div>
 
 ## Code Description:
   **src/components/landingPage.js**
-  Where a user will first arrive and login or register 
+  - Where a user will first arrive and login or register 
+
   **src/components/dashboard.js**
-	Main component once a user has logged in
+	- Main component once a user has logged in
+
   **src/components/students.js**
-	Holds a list of students
+	- Holds a list of students
+
   **src/components/notes.js**
-	Holds most of the interactivity 
+	- Holds most of the interactivity 
