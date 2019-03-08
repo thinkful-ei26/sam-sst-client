@@ -80,7 +80,7 @@ export const deleteStudentSuccess = () => {
 
 export const deleteStudent = (values, userId) => dispatch => {
     let newValues = { studentId: values}
-    console.log(newValues)
+    // console.log(newValues)
     return fetch(`${API_BASE_URL}/api/students/${userId}`, {
         method: 'DELETE',
         body: JSON.stringify(newValues),
@@ -117,7 +117,7 @@ export const fetchStudents = (userId) => dispatch => {
 }
 
 export const postStudent = (values, userId) => dispatch => {
-    console.log('>>>>>>',values)
+    // console.log('>>>>>>',values)
     return fetch(`${API_BASE_URL}/api/students/${userId}`, {
         method: 'POST',
         body: JSON.stringify(values),
