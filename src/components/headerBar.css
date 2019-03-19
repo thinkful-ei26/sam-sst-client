@@ -1,10 +1,13 @@
 .header-bar {
     background-color: #282c34;
-    width: 100%;
+    max-width: 1200px;
     position: absolute;
     top: 0px;
     width: 100%;
     border-bottom: blue solid 6px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
 .dashboard-name {

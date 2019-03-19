@@ -85,7 +85,7 @@ export class NoteForm extends React.Component {
           validate={[required, nonEmpty]}
         />
         <label className='noteFormLabel' htmlFor="objective">
-          Objective <br/>% accuracy of Goal: {this.props.studentGoal}
+          Objective % accuracy of Goal: {this.props.studentGoal}
         </label>
         <Field
           name="objective"
@@ -110,7 +110,7 @@ export class NoteForm extends React.Component {
           // label="Plan"
           validate={[required, nonEmpty]}
         />
-        <button 
+        <button className='submitNoteButton' 
             type="submit"
             disabled={this.props.pristine || this.props.submitting}>
             Submit Note

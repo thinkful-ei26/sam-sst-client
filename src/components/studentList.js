@@ -23,9 +23,10 @@ class Students extends Component {
         <button className="cool" onClick={() =>this.props.dispatch(addStudent())}>
           Add Student
         </button> 
-        <h4>Students</h4>
         <div >
         <ul className="studentsListt">
+        <div className='studentListHeader'>Students</div>
+
           {students}
         </ul>
         </div>

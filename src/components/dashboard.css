@@ -28,7 +28,7 @@
  margin:auto;
 }
 
-@media (max-width: 500px) { 
+@media (max-width: 650px) { 
   .students, .notes {
     display:block;
     width: 100%;

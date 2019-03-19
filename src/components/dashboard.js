@@ -10,7 +10,7 @@ export class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className='everything'>
+      <main className='everything'>
         <HeaderBar />
         <div className="dash">
           <div  className="students ib">
@@ -20,7 +20,7 @@ export class Dashboard extends React.Component {
             <Notes />
           </div>
         </div>
-      </div>   
+      </main>   
     );
   }
 }

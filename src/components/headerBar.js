@@ -25,7 +25,7 @@ export class HeaderBar extends React.Component {
         <div className="dashboard-name">
           {this.props.name}
         </div>
-        <div className='logoutB'>
+        <div className='logoutB '>
           {logOutButton}
         </div>
       </header>

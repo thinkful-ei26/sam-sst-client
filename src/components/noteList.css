@@ -1,3 +1,7 @@
+.notesListHeader {
+font-size: 120%;
+}
+
 .notesListt {
   overflow:  auto;
   max-height: 340px;

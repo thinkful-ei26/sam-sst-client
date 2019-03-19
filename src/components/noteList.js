@@ -22,7 +22,8 @@ class Notes extends Component {
 
     return (
       <div className="Notes">
-        <h4>Notes</h4>
+        <div className='notesListHeader'>Notes</div>
+
         <ul className='notesListt'>
           {notes}
         </ul>

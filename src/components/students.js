@@ -7,9 +7,9 @@ import './students.css'
 class Student extends Component {
   render() {
     return (
-      <div className='studentss'> 
+      <section className='studentss'> 
         <StudentList/>
-      </div>
+      </section>
     );
   }
 }

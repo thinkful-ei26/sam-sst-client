@@ -25,11 +25,11 @@ class Notes extends Component {
     }
 
     return (
-      <div> 
-        <h1 className='studentHeader'>
+      <section> 
+        <div className='studentHeader'>
           {this.props.studentName}
-        </h1>
-        <button className="deleteStudent" onClick={() =>this.dStu()}>
+        </div>
+        <button className="redbutt" onClick={() =>this.dStu()}>
           Delete Student
         </button>  
         {this.props.charTrue 
@@ -59,7 +59,7 @@ class Notes extends Component {
               </div>
             </div>
           }
-      </div>
+      </section>
     );
   }
 }

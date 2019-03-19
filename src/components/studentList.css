@@ -1,3 +1,7 @@
+.studentListHeader {
+  font-size: 150%;
+}
+
 ul {
   list-style-type: none;
   padding: 10px;
